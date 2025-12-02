@@ -1,6 +1,7 @@
 package com.obando.crud_demo.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "products")
@@ -10,7 +11,16 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
+    @NotBlank
+    @Size(min = 3, max = 15)
+    private String name;
+
+    @Min(value = 0)
+    @NotNull
     private Double price;
+
+    @NotBlank
+    @Size(min = 10, max = 150)
     private String description;
 
     public Long getId() {
@@ -35,5 +45,13 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
