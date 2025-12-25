@@ -3,7 +3,6 @@ package com.obando.crud_demo.validation;
 import com.obando.crud_demo.model.Product;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 @Component
